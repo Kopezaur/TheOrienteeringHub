@@ -49,14 +49,17 @@
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
-            "assets:install --relative %PUBLIC_DIR%": "symfony-cmd"
+            "assets:install --symlink %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
             "@auto-scripts"
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ]
+        ],
+		"compile": [
+		  "app/console assets:install"
+		]
     },
     "conflict": {
         "symfony/symfony": "*"
