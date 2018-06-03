@@ -6,7 +6,7 @@ parameters:
     images_directory: '../public/build/images'
     router.request_context.host: theorienteeringhub.herokuapp.com
     router.request_context.scheme: https
-    router.request_context.base_url: my/path
+    router.request_context.base_url: /login
 
 services:
     # default configuration for services in *this* file

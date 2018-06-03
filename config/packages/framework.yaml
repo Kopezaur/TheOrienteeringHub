@@ -8,6 +8,11 @@ framework:
     # Remove or comment this section to explicitly disable session support.
     session:
         handler_id: ~
+        
+    annotations:
+        cache:                file
+        file_cache_dir:       '%kernel.cache_dir%/annotations'
+        debug:                '%kernel.debug%'
 
     #esi: true
     #fragments: true
