@@ -1,0 +1,335 @@
+.container {
+  max-width: 960px;
+}
+
+.ohub-color-1 {
+	background-color: #43a047;
+}
+
+.ohub-color-2 {
+	background-color: #aed581;
+}
+
+.ohub-color-3 {
+	background-color: #003300;
+}
+
+.ohub-color-4 {
+	background-color: #BAD94A;
+}
+
+/*
+ * Custom translucent site header
+ */
+.site-header {
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  opacity: 0.95;
+}
+.site-header a {
+  color: #999;
+  transition: ease-in-out color .15s;
+}
+.site-header a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/*
+ * Extra utilities
+ */
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+.flex-equal > * {
+  -ms-flex: 1;
+  -webkit-box-flex: 1;
+  flex: 1;
+}
+@media (min-width: 768px) {
+  .flex-md-equal > * {
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+    flex: 1;
+  }
+}
+
+.overflow-hidden { overflow: hidden; }
+
+footer {
+	background-color: #f5f5f5;
+}
+/*
+ * Footer
+ */
+.blog-footer {
+  padding: 2.5rem 0;
+  color: #999;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-top: .05rem solid #e5e5e5;
+}
+.blog-footer p:last-child {
+  margin-bottom: 0;
+}
+
+.header-image-1 {
+	opacity: 1;
+	transition: .5s ease;
+  	backface-visibility: hidden;
+}
+
+.header-image-2 {
+	opacity: 1;
+	transition: .5s ease;
+  	backface-visibility: hidden;
+}
+
+.header-image-1:hover {
+  filter: brightness(0) invert(1);
+}
+
+.header-image-2:hover {
+  filter: brightness(0) invert(1);
+}
+
+.error-text {
+	color: red;
+}
+.error-container {
+	height:475px;
+	line-height: 475px;
+}
+
+.great-error { 
+	display: inline-block;
+  	vertical-align: middle;
+  	line-height: normal;
+  	font-size:60px;
+}
+
+.admin-panel-icon-holder {
+	width: 80%; 
+	height: 300px; 
+	border-radius: 21px 21px 21px 21px;
+	line-height: 300px;
+}
+
+.admin-panel-icon {
+	display: inline-block;
+  	vertical-align: middle;
+  	line-height: normal;
+  	transition: .1s ease;
+  	backface-visibility: hidden;
+}
+
+.admin-panel-icon:hover {
+  filter: brightness(0) invert(1);
+}
+
+.editable-table tr td {
+	 vertical-align: middle;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px; /* Margin bottom by footer height */
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Set the fixed height of the footer here */
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
+
+.go-back-button {
+	width:100px;
+}
+
+.action-column {
+	width: 12%;
+}
+
+.custom-error-container {
+	padding:75px;
+}
+
+.table-for-add-row {
+	margin: 0 auto;
+}
+
+.table-for-add-row tr td{
+	border: none;
+}
+
+input.hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+#profile-image1 {
+    cursor: pointer;
+     width: 100px;
+    height: 100px;
+	border:2px solid #03b1ce ;
+}
+.tital{ 
+	font-size:20px; 
+	font-weight:500;
+}
+.bot-border{ 
+	border-bottom:1px #f8f8f8 solid;  
+	margin:5px 0  5px 0;
+}	
+
+.m0-auto {
+	margin: 0 auto;
+	top: 0;
+}
+
+.subtital {
+	font-size:20px;
+}
+
+.desc-table{
+	min-width:50%;
+	margin-bottom: 15px;
+	margin-top:15px;
+}
+
+.desc-table tr td:first-child{
+	border-right:1px solid lightgrey;
+	width: 50%;
+}
+
+.desc-table tr{
+	line-height: 50px;
+}
+
+.post-desc-table{
+	width:90%;
+	margin-bottom: 15px;
+	margin-top:15px;
+}
+
+.post-desc-table tr td:first-child{
+	border-right:1px solid lightgrey;
+	padding-left:20px;
+	width: 30%;
+}
+
+.post-desc-table tr{
+	line-height: 70px;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+  background-color: #777;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+}
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 2rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+.post-date {
+	font-size: 21px;
+}
+
+.social{
+	width: 100%;
+  	max-width: 300px;
+  	padding: 15px;
+  	margin: 0 auto;
+  	margin-top: 13%;
+}
+
+.social-buttons a{
+	font-size:21px;
+	padding: 25px;
+	border-radius:20px;
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+
+.view-details-button:hover {
+	background-color: #0069d9;
+	border-color: #0062cc;
+}
