@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html class="{% block html_class %}{% endblock %}">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}TheOrienteeringHub{% endblock %}</title>
+        {% block stylesheets %}
+        	<link rel="stylesheet" href="{{ asset('build/bootstrap.min.css') }}"/>
+        	<link rel="stylesheet" href="{{ asset('build/layout.css') }}"/>
+        {% endblock %}
+        <link rel="icon" href="{{ asset('build/images/map.png') }}" type="image/x-icon">
+    </head>
+    <body class="{% block body_class %}{% endblock %}">
+    
+    	<nav class="site-header sticky-top py-1 ohub-color-3">
+          <div class="container d-flex flex-column flex-md-row justify-content-between ohub-color-3">
+            <a class="py-2 header-image-1" href="{{ path('home') }}" title="Home">
+              	<img src="{{ asset('build/images/map-grey.png') }}" alt="Home" width=24 height=24 class="d-block mx-auto" />
+            </a>
+            <a class="py-2 d-none d-md-inline-block" href="{{ path('viewPerson', { 'id':app.user.id }) }}" title="My Profile">
+            	My profile
+            </a>
+            <a class="py-2 d-none d-md-inline-block" href="{{ path('homeSocial') }}" title="Social">
+            	Social
+            </a>
+            <!-- 
+            <a class="py-2 d-none d-md-inline-block" href="#" title="Competitions">
+            	Competitions
+            </a>
+            -->
+            {% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.role.name == "Admin" %}
+            <a class="py-2 d-none d-md-inline-block" href="{{ path('administration') }}" title="Administration panel">
+            	Administration
+            </a>
+            {% endif %}
+            <a class="py-2 d-none d-md-inline-block header-image-2" href="{{ path('logout') }}" title="Logout">
+				<img src="{{ asset('build/images/logout.png') }}" alt="Home" width=24 height=24 />
+			</a>
+          </div>
+        </nav>
+    	
+    	{% block body %}{% endblock %}
+    	
+    	<footer class="footer">
+    		<div class="container text-center">
+    			Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+    		</div>
+    	</footer>
+        
+        {% block javascripts %}
+            <script src="{{ asset('build/app.js') }}"></script>
+            <script src="{{ asset('build/jquery.min.js') }}"></script>
+            <script src="{{ asset('build/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('build/jquery.dataTables.min.js') }}"></script>
+            <script src="{{ asset('build/dataTables.bootstrap4.min.js') }}"></script>
+            <script src="{{ asset('build/popover.js') }}"></script>
+            <script src="{{ asset('build/confirmation.js') }}"></script>
+            {% block extrascripts %}
+            	<!-- This block will be updated if extra js scripts exist in extending twig pages -->
+            {% endblock %}
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ 'TheOrienteeringHub' }} {% endblock %}
+{% block body_class %}login-page{% endblock %}
+{% block html_class %}login-page{% endblock %}
+
+{% block body %}
+
+    <div class="validation-container">
+        <div class="">
+    		<img class="validation-logo" src="{{ asset('build/images/ohub-logo.png') }}" alt="Logo" width=384 height=216/>
+    	</div>
+        <div class="validation-letter">
+        	<p class="mt-5 mb-3 text-secondary side-note">Hello {{ firstname }},</p>
+            <p class="mt-5 mb-3 text-secondary side-note">Thank you for joining 'The Orienteering Hub'!</p>
+            <p class="mt-5 mb-3 text-secondary side-note">There is still one more step until you can access the application. <br>Your account must be validated.</p>
+            <p class="mt-5 mb-3 text-secondary side-note">The administrators will first verify your information and then validate your accont. <br>Only after that you will be able to access the application.</p>
+            <p class="mt-5 mb-3 text-secondary side-note">Thank you for your understanding!</p>
+            <p class="mt-5 mb-3 text-secondary side-note">Sincerely,</p>
+            <p class="mt-5 mb-3 text-secondary side-note">The Development Team</p>
+        </div>
+        <div class="go-back-button text-center">
+        	<a class="btn btn-lg btn-primary" href="{{ path('logout') }}">Go back</a>
+        </div>
+    </div>
+    
+{% endblock %}

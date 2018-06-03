@@ -1,0 +1,133 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}TheOrienteeringHub | View Club{% endblock %}
+
+{% block body_class %}{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="panel panel-default text-center m0-auto">
+  		<div class="panel-heading">
+   			<div class="panel-body">
+       
+    			<div class="box box-info">
+        
+            		<div class="box-body">
+						<div align="center">
+
+							{% if (club.logoname) %}
+							<img alt="Photo"
+								src="{{ asset('build/images/' ~ club.logoname) }}"
+								data-toggle="modal" data-target="#exampleModal"
+								id="profile-image1" class="img-circle img-responsive mt-5" width=100
+								height=100>
+							{% else %}
+							<img alt="Photo" data-toggle="modal" data-target="#exampleModal"
+								src="{{ asset('build/images/logo_missing.png') }}"
+								id="profile-image1" class="img-circle img-responsive mt-5" width=100
+								height=100>
+							{% endif %}
+							<div style="color: #999;">click here to change logo</div>
+
+							<div class="modal fade" id="exampleModal" tabindex="-1"
+								role="dialog" aria-labelledby="exampleModalLabel"
+								aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Upload a
+												logo</h5>
+											<button type="button" class="close" data-dismiss="modal"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										{{ form_start(form, {'action': path('viewClub', { 'id': club.id }), 'attr': {'id': 'modal_form', 'data-remote' : 'true'}}) }}
+										<div class="modal-body">
+											{{ form_errors(form) }}
+											<div class="form-group">
+												{{ form_label(form.logoname) }}
+												{{ form_widget(form.logoname) }}
+												{{ form_errors(form.logoname) }}
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary"
+												data-dismiss="modal">Cancel</button>
+											<div>
+												{{ form_widget(form.save) }}
+											</div>
+										</div>
+										{{ form_end(form) }}
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<br>
+    
+              				<!-- /input-group -->
+            			<div>
+                            <h1 style="color:#00b1b1;">{{ club.name }}</h4>          
+                        </div>
+            			<div class="clearfix"></div>
+            			<hr style="margin:5px 0 5px 0;">
+    
+    					<div class="col-xs-6 text-center">
+                  			<table class="m0-auto desc-table table-striped">
+                  				<tr>
+                  					<td class="col-xs-6 tital">
+                  						Club name 
+                  					</td>
+                  					<td class="col-xs-6 subtital">
+                  						{{ club.name }}
+                  					</td>
+                  				</tr>
+                  				<tr>
+                  					<td class="col-xs-6 tital">
+                  						President 
+                  					</td>
+                  					<td class="col-xs-6 subtital">
+                  						{{ club.president.firstname }} {{ club.president.lastname }}
+                  					</td>
+                  				</tr>
+                  				<tr>
+                  					<td class="col-xs-6 tital">
+                  						Email address
+                  					</td>
+                  					<td class="col-xs-6 subtital">
+                  						{{ club.president.email }}
+                  					</td>
+                  				</tr>
+                  				<tr>
+                  					<td class="col-xs-6 tital">
+                  						Date of foundation
+                  					</td>
+                  					<td class="col-xs-6 subtital">
+                  						{{ club.foundationdate|date('d-m-Y') }}
+                  					</td>
+                  				</tr>
+                  				<tr>
+                  					<td class="col-xs-6 tital">
+                  						Country
+                  					</td>
+                  					<td class="col-xs-6 subtital">
+                  						{{ club.president.country.name }}
+                  					</td>
+                  				</tr>
+                  			</table>
+                  		</div>
+                  		{% if is_granted('IS_AUTHENTICATED_FULLY') and (app.user.role.name == "Admin" or (app.user.role.name == "Coach" and app.user.activeclub.id == club.id)) %}
+    						<div class="col-xs-6">
+    							<a class="btn btn-primary" href="{{ path('editClub', { 'id':club.id }) }}">Update information</a>
+    						</div>
+						{% endif %}
+						
+						<hr class="featurette-divider">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

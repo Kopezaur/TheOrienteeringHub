@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ 'TheOrienteeringHub | Login' }} {% endblock %}
+{% block body_class %}text-center login-page{% endblock %}
+{% block html_class %}login-page{% endblock %}
+
+{% block body %}
+	
+    <div class="form-signin">
+    	<div class="login-logo">
+    		<img class="login-logo" src="{{ asset('build/images/ohub-logo.png') }}" alt="Logo" width=384 height=216/>
+    	</div>
+        {% if error %}
+            <div class="error-text">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+        
+        <form class="form-signin" action="{{ path('login') }}" method="post">
+            <label for="username" class="sr-only">Username:</label>
+            <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" />
+        
+            <label for="password" class="sr-only">Password:</label>
+            <input type="password" class="form-control" id="password" name="_password" />
+        
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
+        
+        <a class="btn btn-lg btn-primary btn-block register-button" href="{{ path('register') }}">Register</a>
+        <p class="mt-5 mb-3 text-muted side-note">Note : If you don't already have an account, click on the 'Register' button above.</p>
+    </div>
+    
+{% endblock %}

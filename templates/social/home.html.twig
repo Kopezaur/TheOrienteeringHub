@@ -1,0 +1,14 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}TheOrienteeringHub | Social{% endblock %}
+
+{% block body_class %}{% endblock %}
+
+{% block body %}
+	<div class="container social">
+		<div class="text-center social-buttons">
+			<a class="btn btn-primary btn-block ohub-color-1" href="{{ path('indexSocialPersons') }}">People</a>
+			<a class="btn btn-primary btn-block ohub-color-2" href="{{ path('indexSocialClubs') }}">Clubs</a>
+		</div>
+	</div>
+{% endblock %}

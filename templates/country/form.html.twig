@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}{{ edit ? 'TheOrienteeringHub | Edit Country' : 'TheOrienteeringHub | Add Country' }}{% endblock %}
+
+{% block body_class %}{% endblock %}
+
+{% block body %}
+	<div class="container">
+    	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    		<h2 class="display-4">{{ edit ? 'Edit Country' : 'Add Country' }}</h2>
+    	</div>
+		
+		{{ form_start(form) }}
+		{{ form_errors(form) }}
+		<div class="form-group">
+			{{ form_label(form.name) }}
+			{{ form_widget(form.name) }}
+			{{ form_errors(form.name) }}
+		</div>
+		<br>
+		
+		<div>
+	        {{ form_widget(form.save) }}
+	    </div>
+		
+		{{ form_end(form) }}
+    </div>
+{% endblock %}

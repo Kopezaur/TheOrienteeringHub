@@ -1,0 +1,68 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}TheOrienteeringHub | Edit User{% endblock %}
+
+{% block body_class %}{% endblock %}
+
+{% block body %}
+	<div class="container">
+    	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    		<h2 class="display-4">Update Profile</h2>
+    	</div>
+		
+		{{ form_start(form) }}
+		{{ form_errors(form) }}
+		<div class="form-group">
+			{{ form_label(form.firstname) }}
+			{{ form_widget(form.firstname) }}
+			{{ form_errors(form.firstname) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.lastname) }}
+			{{ form_widget(form.lastname) }}
+			{{ form_errors(form.lastname) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.username) }}
+			{{ form_widget(form.username) }}
+			{{ form_errors(form.username) }}
+		</div>
+		<div class="form-group {% if app.user.role.name != "Admin" %}{{ 'd-none' }}{% endif %}">
+			{{ form_label(form.validated) }}
+			{{ form_widget(form.validated) }}
+			{{ form_errors(form.validated) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.email) }}
+			{{ form_widget(form.email) }}
+			{{ form_errors(form.email) }}
+		</div>
+		<div class="form-group {% if app.user.role.name != "Admin" %}{{ 'd-none' }}{% endif %}">
+			{{ form_label(form.role) }}
+			{{ form_widget(form.role) }}
+			{{ form_errors(form.role) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.country) }}
+			{{ form_widget(form.country) }}
+			{{ form_errors(form.country) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.category) }}
+			{{ form_widget(form.category) }}
+			{{ form_errors(form.category) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.activeclub) }}
+			{{ form_widget(form.activeclub) }}
+			{{ form_errors(form.activeclub) }}
+		</div>
+		<br>
+		
+		<div>
+	        {{ form_widget(form.save) }}
+	    </div>
+		
+		{{ form_end(form) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}{{ edit ? 'TheOrienteeringHub | Edit Club' : 'TheOrienteeringHub | Add Club' }}{% endblock %}
+
+{% block body_class %}{% endblock %}
+
+{% block body %}
+	<div class="container">
+    	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    		<h2 class="display-4">{{ edit ? 'Edit Club' : 'Add Club' }}</h2>
+    	</div>
+		
+		{{ form_start(form) }}
+		{{ form_errors(form) }}
+		<div class="form-group">
+			{{ form_label(form.name) }}
+			{{ form_widget(form.name) }}
+			{{ form_errors(form.name) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.foundationdate) }}
+			{{ form_widget(form.foundationdate) }}
+			{{ form_errors(form.foundationdate) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.president) }}
+			{{ form_widget(form.president) }}
+			{{ form_errors(form.president) }}
+		</div>
+		<br>
+		
+		<div>
+	        {{ form_widget(form.save) }}
+	    </div>
+		
+		{{ form_end(form) }}
+    </div>
+{% endblock %}

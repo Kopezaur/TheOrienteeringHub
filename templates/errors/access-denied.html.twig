@@ -1,0 +1,14 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}TheOrienteeringHub | Restricted Area{% endblock %}
+
+{% block body_class %}{% endblock %}
+
+{% block body %}
+	<div class="container">
+    	<div class="text-center error-container">
+    			<img src="{{ asset('build/images/access-denied.png') }}" alt="Access Denied" width=500 height=336 />
+    	</div>
+    	<p class="mt-5 mb-3 text-muted side-note text-center">This section of the application has restricted access. Please return to the main-page!</p>
+    </div>
+{% endblock %}
