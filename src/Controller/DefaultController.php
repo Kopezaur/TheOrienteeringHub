@@ -9,7 +9,7 @@ class DefaultController extends AbstractController {
 	/**
       * @Route("/", name="default")
       */
-    public function indexAction(Request $request)
+    public function index(Request $request)
      {
          return $this->redirectToRoute('login');
      }
